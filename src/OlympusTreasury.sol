@@ -295,8 +295,6 @@ contract OlympusTreasury is Ownable {
         @param _profit uint
         @return send_ uint
      */
-     // CEI 
-     // CHECK - EFFECTs - INteractions
     function deposit( uint _amount, address _token, uint _profit ) external returns ( uint send_ ) {
         require( isReserveToken[ _token ] || isLiquidityToken[ _token ], "Not accepted" );
         IERC20( _token ).safeTransferFrom( msg.sender, address(this), _amount );
